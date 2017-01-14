@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+
+function But(){
+	alert("按钮被按了");
+}
+
+window.onload = function(){     // 为onload事件绑定处理
+	// 在JavaScript里面所有的元素实际上都是对象
+	// 如果要想取得对象， 则可以使用document.getElementById("ID名称")
+	var obj = document.getElementById("but"); // 取得id为ID的对象
+	if(obj != undefined){ // 表示对象已经明确存在了
+		// 对象.addEventListerner(事件类型，处理函数，false)   做冒泡处理
+		// 动态绑定事件不要再加“on”
+		obj.addEventListener("click", function(){
+			But();
+
+		}, false);
+
+	}
+}
+	
+//以上给出的JavaScript的事件处理操作，就是现阶段主要使用的模式
+
+</script>
+
+</head>
+<body>
+
+<button id="but">Push Me</button>
+
+</body>
+
+
+</html>
