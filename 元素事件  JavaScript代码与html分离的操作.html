@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+
+// JavaScript事件与html代码分离操作 不确定是否为最佳方法
+function Fun(){
+	alert("你去死吧!----测试成功了，好高兴！"); // button 点击后的反应事件
+}
+function dd(){ // 页面onload加载完后立即运行的函数  并且与html代码文件绑定
+	var d = document.getElementById("dianji");
+	if(!d){
+		return false;
+	}
+	d.onclick = function(){
+		Fun();
+		return falae;
+	}
+}
+window.onload = function(){ // 页面onload加载完成后立即运行相应函数的实现
+	dd();
+}
+</script>
+</head>
+<body>
+<button id="dianji">点击我就可以了</button>
+</body>
+
+
+</html>
