@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+
+<!--addLoadEvent    开始  -->
+<script type="text/javascript">
+
+function addLoadEvent(func){//addLoadEvent方法
+var oldonload=window.onload;
+if(typeof window.onload!='function'){//第一次加载执行
+ window.onload=func;   
+}else{
+window.onload=function(){
+  oldonload();
+  func();   
+}
+}
+}
+ 
+
+addLoadEvent(事件方法);
+addLoadEvent(firestFunction); 
+addLoadEvent(secondFunction);
+
+</script>
+<!--addLoadEvent    结束  -->
+
+
+</body>
+
+
+</html>
