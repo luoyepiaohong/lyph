@@ -172,16 +172,34 @@ document.write("<br>");
 document.write(doh.toUpperCase()); // DOH*/
 	
 var paragraph = "born 15 11 2003 (mother Sport) : white Fang";
-document.write(paragraph.charAt(0) == "b" && paragraph.charAt(1) == "o" && paragraph.charAt(2) == "r" && paragraph.charAt(3) == "n" );
-document.write("<br>" + paragraph.charAt(6));
-document.write("<br>" + paragraph.slice(6,17));
-document.write("<br>" + (paragraph.slice(0, 4) == "born")); //判断相等操作应定要外加括号
+document.write(paragraph.charAt(0) == "b" && paragraph.charAt(1) == "o" && paragraph.charAt(2) == "r" && paragraph.charAt(3) == "n" ); // true
+document.write("<br>" + paragraph.charAt(6)); // 5
+document.write("<br>" + paragraph.slice(6,17)); // 5 11 2003(
+document.write("<br>" + (paragraph.slice(0, 4) == "born")); // true 判断相等操作应定要外加括号
+
 document.write("<br>");
 function startsWith(string, pattern){ //如果第一个参数以第二个参数字符串开头就返回true，否则返回false
 	return string.slice(0, pattern.length) == pattern;
 }
-document.write(startsWith("rotation", "rot"));
+document.write(startsWith("rotation", "rot")); // true
 document.write("<br>");
 document.write("werwerwer".charAt(4)); //返回字符串第5个字符 e
 document.write("<br>");
+document.write("werwerwer".slice(4)); // erwer
+
+
+
+
+document.write("<br>");
+function catName(para){
+	var clon = para.indexOf(":");
+	return para.slice(clon + 2).split(", ");
+}
+document.write(catName("born 15 11 2003 (mother Sport) : white Fang")[0]); // white Fang
+document.write("<br>");
+document.write(catName("born 15 11 2003 (mother Sport) : white Fang")[1]);  //undefined
+document.write("<br>");
+document.write(catName('born 20/09/2004 (mother Yellow Bess): Doctor Hobbles the 2nd, Noog')[0]);  // Doctor Hobbles the 2nd
+document.write("<br>");
+document.write(catName('born 20/09/2004 (mother Yellow Bess): Doctor Hobbles the 2nd, Noog')[1]); // Noog
 </script>
