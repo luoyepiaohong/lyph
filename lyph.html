@@ -226,6 +226,61 @@ document.write(new Date(1928, 7, 18, 11, 23, 45)); // 获取设定时间
 // 年，月，日，小时，分钟，秒，毫秒
 // 注意  月是从0开始  日是从1开始 	
 	
+
+var tody = new Date();
+document.write("<br>" + "年：" + tody.getFullYear());
+document.write("<br>" + tody.getTime());
+
+
+function argumentCounter(){
+	return "You gave me " + arguments.length + " arguments.";
+} // arguments 对象  一个length 属性
+document.write(argumentCounter("Straw man", "Tautology", "Ad hominem"));
+
+
+function add(number, howmuch){ 
+	if(arguments.length < 2) //arguments  函数参数个数 对象 有length 属性
+		howmuch = 1;
+	return number + howmuch;
+}
+document.write("<br>" + add(1,5,4)); // 6
+document.write("<br>" + add(10)); // 11
+
+
+function range(start, end){
+	if(arguments.length < 2){ // 参数个数小于2即等于1 start=0， end= 输入参数
+		end = start;
+		start = 0;
+	}
+	if(arguments.length == 0){ // 如果没有参数 显示alert信息
+		alert("出错了，请输入函数参数！");
+	}
+	var result = [];
+	for(var i = start; i <= end; i++){
+		result.push(i);
+	}
+	return result;
+}
+document.write("<br>" + range(4)); // 0,1,2,3,4
+document.write("<br>" + range(2, 4)); // 2, 3, 4
+document.write("<br>" + range()); // alert 信息“出错了，请输入函数参数！”	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 </script>
