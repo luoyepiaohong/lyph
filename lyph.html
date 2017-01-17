@@ -266,7 +266,12 @@ document.write("<br>" + range(2, 4)); // 2, 3, 4
 document.write("<br>" + range()); // alert 信息“出错了，请输入函数参数！”	
 	
 	
-	
+
+alert(parseInt("39abc")); //  39
+alert(parseInt("we39abc")); //  NaN
+alert(parseFloat("56.39abc")); //  56.39
+alert(parseFloat("fg56.39abc")); //  NaN
+alert(parseFloat("5.6.39abc")); //  5.6
 	
 	
 	
