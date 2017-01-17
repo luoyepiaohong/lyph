@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript">
+
+window.onload = function() {
+	position();
+}
+
+function position() {
+	if(!document.getElementById) return false;
+	if(!document.getElementById('a')) return false;
+	var b = document.getElementById('a');
+	b.style.position = "absolute";
+	b.style.left = "50px";
+	b.style.top = "50px";
+
+	var xpos = parseInt(b.style.left);
+	var ypos = parseInt(b.style.top);
+	move();	
+}
+function move() {
+	if(!document.getElementById) return false;
+	if(!document.getElementById('a')) return false;
+	var b = document.getElementById('a');
+	var xpos = parseInt(b.style.left);
+	var ypos = parseInt(b.style.top);
+	if(xpos == 1000 && ypos == 400 ) {
+		return true;
+	}
+	if(xpos < 1000) {
+		xpos += 2;
+	}
+	if(xpos > 1000) {
+		xpos -= 2;
+	}
+	if(xpos == 1000) {
+		xpos = 0;
+	}
+	if(ypos < 400) {
+		ypos++;
+	}
+	if(ypos > 400) {
+		ypos--;
+	}
+	if(ypos == 400) {
+		ypos = 0;
+	}
+	b.style.left = xpos + "px";
+	b.style.top = ypos + "px";
+	movement = setTimeout("move()", 10);
+}
+
+</script>
+</head>
+<body>
+ 
+
+ <div id="a" style="width: 200px; height: 200px; background-color: #666;"></div>  
+</body>
+</html>
