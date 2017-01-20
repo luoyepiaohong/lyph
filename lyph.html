@@ -2,6 +2,24 @@
 
 #零基础学习Javascript各练习小代码
 <script type="text/javascript" >
+	
+//有一点必须注意，即用var 操作符定义的变量将成为定义该变量作用域中的局部变量
+function abc() {
+	mes = 10;
+	return mes;
+}
+console.log(abc()); // 10
+console.log(mes); // 10
+
+function abcd() {
+	var mess = 20;
+	return mess;
+}
+
+console.log(abcd()); // 20
+console.log(mess); // not defined
+console.log( typeof mess); // undefined	
+
 function displayDate(){
 document.getElementById("demo").innerHTML = Date();
 }
