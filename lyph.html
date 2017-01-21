@@ -2,6 +2,51 @@
 
 #零基础学习Javascript各练习小代码
 <script type="text/javascript" >
+
+
+var num = 0;
+for(var i = 1; i < 10; i ++) {
+	if(i % 5 == 0) {
+		break;   //  跳出循环
+	}
+	num++;
+}
+console.log(num); // 4
+
+var num = 0;
+for(var i = 1; i < 10; i ++) {
+	if(i % 5 == 0) {
+		continue;    // 进入下一个循环
+	}
+	num++;
+}
+console.log(num); // 8
+
+var num = 0;
+outermost:  // label 语句
+for(var i = 0; i < 10; i++) {
+	for(var j = 0; j < 10; j++) {
+		if(i == 5 && j == 5) {
+			break outermost;   //  跳出循环
+		}
+		num++;
+	}
+}
+console.log(num); // 55
+
+var num = 0;
+outermost:         // label 语句
+for(var i = 0; i < 10; i++) {
+	for(var j = 0; j < 10; j++) {
+		if(i == 5 && j == 5) {
+			continue outermost; // 进入下一个循环
+		}
+		num++;
+	}
+}
+console.log(num); // 95	
+	
+	
 	
 	
 	
