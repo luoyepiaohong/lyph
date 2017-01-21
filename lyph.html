@@ -3,6 +3,29 @@
 #零基础学习Javascript各练习小代码
 <script type="text/javascript" >
 	
+	
+	
+var num1 = 2;
+var num2 = 20;
+var num3 = --num1 + num2;
+var num4 = num1 + num2;
+console.log(num1); // 1
+console.log(num2); // 20
+console.log(num3); // 21
+console.log(num4); // 21
+ // 两段分开分别运行
+var num1 = 2;
+var num2 = 20;
+var num3 = num1-- + num2;
+var num4 = num1 + num2;
+console.log(num1); // 1
+console.log(num2); // 20
+console.log(num3); // 22
+console.log(num4); // 21
+console.log(num1-- == 1); //true	
+	
+
+	
 //有一点必须注意，即用var 操作符定义的变量将成为定义该变量作用域中的局部变量
 function abc() {
 	mes = 10;
