@@ -386,7 +386,11 @@ console.log(typeof o3); // object
 f1,f2,归根结底都是通过 new Function()的方式进行创建的。
 Function Object 也都是通过 New Function()创建的。
 	
-	
+
+
+
+
+
 	
 	
 	
@@ -399,3 +403,125 @@ Function Object 也都是通过 New Function()创建的。
 	
 	
 </script>
+
+<form action="" method="post">
+	你爱好的运动是？<br>
+	<input type="checkbox" id="CheckedAll">全选/全不选<br>
+	<input type="checkbox"  name="items" value="足球">足球
+	<input type="checkbox"  name="items" value="篮球">篮球
+	<input type="checkbox"  name="items" value="羽毛球">羽毛球
+	<input type="checkbox"  name="items" value="乒乓球">乒乓球<br>
+	<input type="button" id="checkedAll" value="全 选">
+	<input type="button" id="checkedNo" value="全不选">
+	<input type="button" id="checkedRev" value="反 选">
+	<input type="button" id="send" value="提 交">
+</form>
+ <script type="text/javascript">
+$(document).ready(function() {
+	$('#checkedAll').click(function() {
+		$('[name=items]:checkbox').prop('checked', true);
+	});
+	$('#checkedNo').click(function() {
+		$('[type=checkbox]:checkbox').prop('checked', false);
+	});
+	$('#checkedRev').click(function() {
+		$('[name=items]:checkbox').each(function() {
+		  // $(this).prop('checked', !$(this).prop('checked'));
+		  this.checked = !this.checked;
+	   });
+	});
+	$('#send').click(function() {
+		var str = "你选中的是： \r\n";
+		$('[name=items]:checkbox:checked').each(function() {
+			str += $(this).val() + '\r\n';
+		});
+		alert(str);
+	});
+	$('#CheckedAll').click(function() {
+		//  if(this.checked) {
+		//  	$('[name=items]:checkbox').prop('checked', true);
+		//  }else {
+		//  	$('[name=items]:checkbox').prop('checked', false);
+		//  }
+		$('[name=items]:checkbox').prop('checked', this.checked);
+	});
+
+	
+});
+</script>
+<hr style="color: #888; height: 2px;">
+
+
+<!-- 下拉列表框 测试-->
+<div class="centent">
+	<select multiple id="select1" style="width: 100px; height: 160px;">
+		<option value="1">选项1</option>
+		<option value="2">选项2</option>
+		<option value="3">选项3</option>
+		<option value="4">选项4</option>
+		<option value="5">选项5</option>
+		<option value="6">选项6</option>
+		<option value="7">选项7</option>
+		<option value="8">选项8</option>
+	</select>
+	<div>
+		<span id="add">选中添加到右边&gt;&gt;</span><br>
+		<span id="add_all">全部添加到右边&gt;&gt;</span>
+	</div>
+
+
+</div>
+<div class="centent">
+	<select multiple id="select2" style="width: 100px; height: 160px;"></select>
+	<div>
+		<span id="remove">&lt;&lt;选中删除到左边</span><br>
+		<span id="remove_all">&lt;&lt;选中删除到右边</span>
+	</div>
+</div>
+<script type="text/javascript">
+$(function() {
+	/*$('#add').click(function() {
+		var $options = $('#select1 option:selected');
+		// var $remove = $options.remove();
+		// $options.appendTo('#select2');
+		$('#select2').append($options);
+	});
+    */
+	//  select1
+	$('#add').click(function() {
+		// $('#select1 option:selected').appendTo('#select2');
+		// $remove.append('#select2');
+		// $('#select2').append($remove);
+		var $options = $('#select1 option:selected');
+		var $remove = $options.remove();
+		$options.appendTo('#select2');
+	});
+
+	$('#add_all').click(function() {
+		// $('#select1 option').appendTo('#select2');
+		var $options = $('#select1 option');
+		$options.appendTo('#select2');
+	});
+
+	$('#select1').dblclick(function() {
+		// $('option:selected', this).appendTo('#select2');
+		var $options = $('option:selected', this);
+		$options.appendTo('#select2');
+	});
+
+
+    // select2
+	$('#remove').click(function() {
+		 $('#select2 option:selected').appendTo('#select1');
+	});
+
+	$('#remove_all').click(function() {
+		$('#select2 option').appendTo('#select1');
+	});
+
+	$('#select2').dblclick(function() {
+	    $('option:selected', this).appendTo('#select1');
+	});
+
+});
+</script> 
