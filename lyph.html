@@ -524,4 +524,24 @@ $(function() {
 	});
 
 });
+	
+// 求参数最大值
+function abc(x, y, z, l, m, n) {
+	var max = arguments[0];
+	if(arguments.length < 2) return max;
+	for(var i = 0; i < arguments.length; i++) {
+		if(arguments[i] > max) {
+			max = arguments[i];
+		}
+	}
+	return max;
+}
+alert(abc(34,54,2，52,63,58));	
+	
+	
+	
+	
+
+	
+	
 </script> 
