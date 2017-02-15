@@ -609,4 +609,22 @@ $(function() {
 
 
 
+<!--  实现计数器功能 -->
+<button id="add_btn" type="button" onclick="addClick()">自做计数</button>
+<p id="jishu">0</p>
+<script>
+var add = (function () {
+	var counter = 0;
+	return function() {return counter += 1;}
+})();
+//  console.log(add()); 
+//  console.log(add()); 
+//  console.log(add());
+//  console.log(add());
+function addClick() {
+	document.getElementById("jishu").innerHTML = add();
+}
+</script>
+
+
 
