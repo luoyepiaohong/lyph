@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+
+/*document.write('Hello, World!' + "<br>");
+Function.prototype.method = function(name, func) {
+	this.prototype[name] = func;
+	return this;
+};
+var that = this;
+document.write("seven".length + "<br>");
+document.write("seven".toUpperCase() + "<br>");
+document.write("<br>");
+
+var empty_object = {};
+var stooge = {
+	"first-name": "Jerome",
+	"last-name": "Howard",
+	last_name: "nihao"
+}
+var middle = stooge["middle-name"] || "(none)";
+document.write(middle + "<br>");
+var bottom = stooge["last-name"] || "(none)";
+document.write(bottom + "<br>");
+document.write("<br>");
+
+document.write(stooge.last_name + "<br>");
+document.write(stooge['first-name'] + "<br>"); // 带有字符串对象的只能用中括号的形式调用
+document.write(stooge['middle-name'] + "<br>");
+document.write("<br>");
+
+var flight = {
+	airline : "Oceanic",
+	number: 815,
+	departure: {
+		LATA: "SYD",
+		time: "2004-09-22 14:55",
+		city: "Sdney"
+	},
+	arrival: {
+		LATA: "LAX",
+		time: "2004-09-23 10:42",
+		city: "Los Angeles"
+	}
+};
+
+document.write(flight.airline + "<br>");
+document.write(flight.run + "<br>");  //  undefined
+document.write(flight.number + "<br>");
+document.write(flight.departure.LATA + "<br>");
+document.write(flight.arrival.time + "<br>");
+flight.airline = "lulu";
+document.write(flight.airline + "<br>");
+document.write("<br>");
+
+if(typeof Object.beget !== 'function') {
+	Object.beget = function(o) {
+		var F = function() {};
+		F.prototype = o;
+		return new F();
+	};
+}
+var another_stooge = Object.beget(stooge);
+
+
+var empty_object = {}; //  空对象
+var stooge = {  //  新建含有两个属性的对象
+    "first-name": "Jerome",
+    "last-name": "Howard"
+};
+document.write(stooge["first-name"] + "<br>"); 
+console.log(stooge["first-name"]);
+console.log(stooge["last-name"]);   
+
+var flight = {
+    airline: "Oceanic",
+    number: 815,
+    departure: {
+        IATA: "SYD",
+        "last-name": "Howard",
+        time: "2004-09-22 14:55",
+        city: "Sydney"
+    },
+    arrival: {
+        IATA: "LAX",
+        time: "2004-09-23 10:42",
+        city: "Los Angeles"
+    }
+};
+console.log(flight.departure.IATA);
+console.log(flight.departure["last-name"]);
+console.log("======================");
+
+
+console.log(stooge["middle-name"]);
+console.log(flight.status);
+console.log(stooge["FIRST-NAME"]);
+console.log("======================");
+
+
+var middle = stooge["middle-name"] || "(none)";
+console.log(middle);
+var status = flight.status || "unknown";
+console.log(status);
+console.log(flight.equipment);
+console.log(flight.equipment && flight.equipment.model);
+console.log("======================");
+
+
+stooge['first-name'] = 'Jome';
+console.log(stooge['first-name']);
+console.log("======================");
+
+
+stooge['middle-name'] = 'Lester';
+stooge.nickname = 'Curly';
+flight.equipment = {
+    model: 'Boeing 777'
+};
+flight.status = 'overdue';
+console.log(stooge['middle-name']);
+console.log(stooge.nickname);
+console.log(flight.equipment);
+console.log(flight.equipment.model);
+console.log(flight.status);
+console.log("======================");
+
+
+var x = stooge;
+x.nickname = 'Cly';
+var nick = stooge.nickname;
+console.log(x);
+console.log(x.nickname);
+console.log(nick);
+console.log("======================");
+
+
+if (typeof Object.beget !== 'function') {
+     Object.beget = function (o) {
+         var F = function () {};
+         F.prototype = o;
+         return new F();
+     };
+}
+var another_stooge = Object.beget(stooge);
+console.log(another_stooge);
+stooge['first-name'] = 'Harry';
+console.log(another_stooge['first-name']);
+console.log("======================");
+
+
+console.log(another_stooge);
+console.log(another_stooge['first-name']);
+console.log(another_stooge['middle-name']);
+console.log(another_stooge.nickname);
+another_stooge['first-name'] = 'Hry';
+another_stooge['middle-name'] = 'Moses';
+another_stooge.nickname = 'Moe';
+console.log(another_stooge);
+console.log(another_stooge['first-name']);
+console.log(another_stooge['middle-name']);
+console.log(another_stooge.nickname);
+stooge.profession = 'actor';
+console.log(another_stooge.profession);
+console.log("======================");
+
+
+console.log(flight.number);
+console.log(flight.status);
+console.log(flight.arrival);
+console.log(flight.manifest);
+console.log(typeof flight.number);
+console.log(typeof flight.status);
+console.log(typeof flight.arrival);
+console.log(typeof flight.manifest);
+console.log("======================");
+
+
+console.log(typeof flight.toString);
+console.log(typeof flight.constructor);
+console.log(flight.hasOwnProperty('number'));
+console.log(flight.hasOwnProperty('constructor'));
+console.log("======================");
+
+
+console.log(another_stooge);
+var name;
+for (name in another_stooge) {
+    if (typeof another_stooge[name] !== 'function') {
+        document.writeln(name + ': ' + another_stooge[name]);
+        console.log(name + ': ' + another_stooge[name]);
+    }
+}
+console.log("======================");
+
+var another_stooge = { 'first-name': "Hry", 'middle-name': "Moses", nickname: "Moe" }
+console.log(another_stooge['first-name']);
+console.log(another_stooge['middle-name']);
+console.log(another_stooge['nickname']);
+console.log("======================");
+
+
+var asd = new Object();
+console.log(typeof asd.toString);
+console.log(typeof asd.constructor);
+console.log("==================================================================");
+
+
+console.log(another_stooge.nickname);
+delete another_stooge.nickname;
+console.log(another_stooge.nickname);
+console.log("==================================================================");*/
+
+
+/*var MYAPP = {};
+MYAPP.stooge = {
+	"first-name": "Joe";
+	"last-name": "Howard";
+};
+MYAPP.flight = {
+	airline: "Oceanic",
+	number: 815,
+	departure: {
+		IATA: "SYD",
+		time: "2004-09-22 14:55",
+		city: "Sydney"
+	},
+	arrival: {
+		IATA: "LAX",
+		time: "2004-09-23 10:42",
+		city: "Los Angeles"
+	}
+};
+console.log("==================================================================");*/
+
+
+/*var myObject = {
+    value: 0,
+    increment: function (inc) {
+        this.value += typeof inc === 'number' ? inc : 1;
+    }
+};
+myObject.increment();
+console.log(myObject.value);    // 1
+myObject.increment(2);
+console.log(myObject.value);    // 3
+myObject.value = 8;
+console.log(myObject.value);
+myObject.increment(2);
+console.log(myObject.value);
+myObject.increment();
+console.log(myObject.value); 
+console.log("==================================================================");*/
+
+/*var Quo = function(string) {
+	this.status = string;
+};
+Quo.prototype.get_status = function() {
+	return this.status;
+};
+var myQuo = new Quo('confused');
+document.write(myQuo.get_status);
+console.log(myQuo.get_status);
+document.write(myQuo.get_status());
+console.log(myQuo.get_status());
+console.log("==================================================================");*/
+
+
+/*var myObject = function() {
+	var value = 0;
+	return {
+		increment: function(inc) {
+			value += typeof inc === 'number' ? inc : 1;
+		},
+		getValue: function() {
+			return value;
+		}
+	};
+}();
+document.write(myObject + "<br>");
+console.log(myObject);
+myObject.increment();
+document.write(myObject.getValue + "<br>");
+console.log(myObject.getValue);
+document.write(myObject.getValue() + "<br>");
+console.log(myObject.getValue());
+myObject.increment(8);
+document.write(myObject.getValue() + "<br>");
+console.log(myObject.getValue());
+console.log("==================================================================");
+myObject.value = 12;
+document.write(myObject.getValue() + "<br>");
+console.log(myObject.getValue());
+console.log("==================================================================");*/
+
+
+/*var quo = function(status) {
+	return {
+		get_status: function() {
+			return status;
+		}
+	};
+};
+var myQuo = quo("amazed");
+document.write(myQuo.get_status + "<br>");
+console.log(myQuo.get_status);
+document.write(myQuo.get_status() + "<br>");
+console.log(myQuo.get_status());
+console.log("==================================================================");*/
+
+
+
+
+
+
+</script>
+</body>
+</html>
