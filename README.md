@@ -1,6 +1,6 @@
-Hello Word
+# Hello Word
 ==========
-My first repository on GitHub!
+## My first repository on GitHub!
 =============================
-# lyph  入门练习
-#零基础学习Javascript各练习小代码
+### lyph  入门练习
+####零基础学习Javascript各练习小代码
